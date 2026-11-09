@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream-50 text-brand-900 antialiased;
+  }
+  /* iOS safe-area dəstəyi (tətbiq rejimi üçün) */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-bold transition active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:brightness-95;
+  }
+  .btn-outline {
+    @apply btn border-2 border-brand-500 text-brand-600 hover:bg-brand-50;
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-card;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-4;
+  }
+}
+
+/* ===== Kənd mənzərəsi animasiyaları (ana səhifə fonu) =====
+   Hamısı yalnız istifadəçi hərəkətə qarşı deyilsə işləyir. */
+@media (prefers-reduced-motion: no-preference) {
+  .anim-sun {
+    animation: kd-spin 90s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .anim-cloud-a {
+    animation: kd-sway 14s ease-in-out infinite;
+  }
+  .anim-cloud-b {
+    animation: kd-sway 20s ease-in-out infinite;
+  }
+  .anim-cow-head {
+    animation: kd-graze 5s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: 90% 40%;
+  }
+  .anim-duck {
+    animation: kd-walk 26s linear infinite;
+  }
+  .anim-rooster {
+    animation: kd-bob 4.5s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: bottom center;
+  }
+  .anim-flock {
+    animation: kd-fly 34s linear infinite;
+  }
+  .anim-grass {
+    animation: kd-grass 6s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes kd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes kd-sway {
+  0%,
+  100% {
+    transform: translateX(-16px);
+  }
+  50% {
+    transform: translateX(16px);
+  }
+}
+@keyframes kd-graze {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+@keyframes kd-walk {
+  0% {
+    transform: translateX(-120px);
+  }
+  100% {
+    transform: translateX(1320px);
+  }
+}
+@keyframes kd-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+}
+@keyframes kd-fly {
+  0% {
+    transform: translate(-160px, 40px);
+  }
+  100% {
+    transform: translate(1360px, -30px);
+  }
+}
+@keyframes kd-grass {
+  0%,
+  100% {
+    transform: skewX(-5deg);
+  }
+  50% {
+    transform: skewX(5deg);
+  }
+}

@@ -1,0 +1,116 @@
+import type { Category, Product } from "../types";
+
+// Supabase qoşulmayanda (demo rejimi) göstərilən nümunə məlumatlar.
+// Admin paneldə həqiqi məhsullar əlavə edildikdən sonra bunlar əvəz olunur.
+
+const img = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=70`;
+
+export const seedCategories: Category[] = [
+  { id: "sud", name: "Süd məhsulları", slug: "sud", sort_order: 1 },
+  { id: "bal", name: "Bal və mürəbbə", slug: "bal", sort_order: 2 },
+  { id: "yumurta", name: "Kənd yumurtası", slug: "yumurta", sort_order: 3 },
+  { id: "et", name: "Ət və quş", slug: "et", sort_order: 4 },
+];
+
+export const seedProducts: Product[] = [
+  {
+    id: "p1",
+    name: "Kənd südü",
+    description: "Təzə sağılmış natural inək südü. Hər gün səhər hazırlanır.",
+    price: 2.5,
+    unit: "litr",
+    category_id: "sud",
+    image_url: img("photo-1550583724-b2692b85b150"),
+    in_stock: true,
+    featured: true,
+  },
+  {
+    id: "p2",
+    name: "Ev qatığı",
+    description: "Qatı, dadlı ev qatığı. Konservantsız.",
+    price: 3,
+    unit: "litr",
+    category_id: "sud",
+    image_url: img("photo-1488477181946-6428a0291777"),
+    in_stock: true,
+    featured: true,
+  },
+  {
+    id: "p3",
+    name: "Kənd pendiri",
+    description: "Təbii motal/təzə pendir. Duzu ölçülü.",
+    price: 9,
+    unit: "kq",
+    category_id: "sud",
+    image_url: img("photo-1486297678162-eb2a19b0a32d"),
+    in_stock: true,
+    featured: false,
+  },
+  {
+    id: "p4",
+    name: "Kənd kərə yağı",
+    description: "Təzə qaymaqdan çalınmış natural kərə yağı.",
+    price: 15,
+    unit: "kq",
+    category_id: "sud",
+    image_url: img("photo-1589985270826-4b7bb135bc9d"),
+    in_stock: true,
+    featured: false,
+  },
+  {
+    id: "p5",
+    name: "Dağ balı",
+    description: "Təbii çiçək balı. Şəkər əlavəsi yoxdur.",
+    price: 20,
+    unit: "kq",
+    category_id: "bal",
+    image_url: img("photo-1587049352846-4a222e784d38"),
+    in_stock: true,
+    featured: true,
+  },
+  {
+    id: "p6",
+    name: "Ev mürəbbəsi (qoz)",
+    description: "Ənənəvi üsulla bişirilmiş qoz mürəbbəsi.",
+    price: 12,
+    unit: "banka",
+    category_id: "bal",
+    image_url: img("photo-1474979266404-7eaacbcd87c5"),
+    in_stock: true,
+    featured: false,
+  },
+  {
+    id: "p7",
+    name: "Kənd yumurtası",
+    description: "Sərbəst gəzən toyuqların təzə yumurtaları.",
+    price: 0.3,
+    unit: "ədəd",
+    category_id: "yumurta",
+    image_url: img("photo-1587486913049-53fc88980cfc"),
+    in_stock: true,
+    featured: true,
+  },
+  {
+    id: "p8",
+    name: "Kənd toyuğu",
+    description: "Təbii yemlənmiş, sərbəst böyümüş kənd toyuğu.",
+    price: 11,
+    unit: "kq",
+    category_id: "et",
+    image_url: img("photo-1518492104633-130d0cc84637"),
+    in_stock: true,
+    featured: false,
+  },
+  {
+    id: "p9",
+    name: "Ördək əti",
+    description: "Təbii böyümüş kənd ördəyi.",
+    price: 14,
+    unit: "kq",
+    category_id: "et",
+    image_url: img("photo-1612170153139-6f881ff067e0"),
+    in_stock: false,
+    featured: false,
+  },
+];

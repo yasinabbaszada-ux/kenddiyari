@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#2f7d4f"/>
+  <!-- Pipik -->
+  <g fill="#e05a4f">
+    <circle cx="192" cy="132" r="36"/>
+    <circle cx="250" cy="104" r="43"/>
+    <circle cx="308" cy="132" r="36"/>
+  </g>
+  <!-- Baş -->
+  <circle cx="286" cy="248" r="124" fill="#faf7f0"/>
+  <!-- Dimdik -->
+  <path d="M176 226 L78 258 L176 290 Z" fill="#e8a317"/>
+  <!-- Sırğa -->
+  <g fill="#e05a4f">
+    <circle cx="182" cy="308" r="28"/>
+    <circle cx="194" cy="350" r="21"/>
+  </g>
+  <!-- Göz -->
+  <circle cx="308" cy="226" r="23" fill="#1e4f34"/>
+  <!-- Yanaq lələyi -->
+  <path d="M332 292 q44 10 66 -20 q-10 44 -54 48 q-22 2 -12 -28 Z" fill="#dcefe0" opacity="0.85"/>
+</svg>

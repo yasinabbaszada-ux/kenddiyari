@@ -1,0 +1,10 @@
+# Netlify konfiqurasiyası (GitHub-la avtomatik yayım üçün)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA: bütün marşrutlar index.html-ə yönəlir (səhifə yenilənəndə 404 olmasın)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
