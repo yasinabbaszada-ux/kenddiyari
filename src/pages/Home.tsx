@@ -5,7 +5,6 @@ import { getProducts, getCategories } from "../lib/api";
 import type { Product, Category } from "../types";
 import { BRAND } from "../config";
 import ProductCard from "../components/ProductCard";
-import DemoBanner from "../components/DemoBanner";
 import Spinner from "../components/Spinner";
 import FarmScene from "../components/FarmScene";
 
@@ -53,8 +52,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <DemoBanner />
 
       {/* Üstünlüklər */}
       <section className="container-x grid gap-4 py-8 sm:grid-cols-3">

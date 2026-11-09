@@ -1,25 +1,24 @@
 import { supabase, isSupabaseConfigured, PRODUCT_IMAGES_BUCKET } from "./supabase";
-import { seedCategories, seedProducts } from "../data/seed";
 import { DEFAULT_CONTACT, BRAND } from "../config";
 import type { Category, Product, SiteSettings } from "../types";
 
 // ---------- Oxuma (hamı üçün) ----------
 
 export async function getCategories(): Promise<Category[]> {
-  if (!isSupabaseConfigured || !supabase) return seedCategories;
+  if (!isSupabaseConfigured || !supabase) return [];
   const { data, error } = await supabase
     .from("categories")
     .select("*")
     .order("sort_order", { ascending: true });
   if (error) {
-    console.warn("categories yüklənmədi, demo istifadə olunur:", error.message);
-    return seedCategories;
+    console.warn("categories yüklənmədi:", error.message);
+    return [];
   }
-  return (data && data.length ? data : seedCategories) as Category[];
+  return (data ?? []) as Category[];
 }
 
 export async function getProducts(): Promise<Product[]> {
-  if (!isSupabaseConfigured || !supabase) return seedProducts;
+  if (!isSupabaseConfigured || !supabase) return [];
   const { data, error } = await supabase
     .from("products")
     .select("*")
@@ -28,7 +27,6 @@ export async function getProducts(): Promise<Product[]> {
     console.warn("products yüklənmədi:", error.message);
     return [];
   }
-  // Qoşulu olanda real bazanı göstəririk (boş olsa belə — demo qarışmasın).
   return (data ?? []) as Product[];
 }
 

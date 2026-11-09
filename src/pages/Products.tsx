@@ -4,7 +4,6 @@ import { Search } from "lucide-react";
 import { getProducts, getCategories } from "../lib/api";
 import type { Product, Category } from "../types";
 import ProductCard from "../components/ProductCard";
-import DemoBanner from "../components/DemoBanner";
 import Spinner from "../components/Spinner";
 
 export default function Products() {
@@ -43,7 +42,6 @@ export default function Products() {
   return (
     <div className="container-x py-6">
       <h1 className="text-2xl font-extrabold text-brand-800">Məhsullar</h1>
-      <DemoBanner />
 
       {/* Axtarış */}
       <div className="relative mt-4">
