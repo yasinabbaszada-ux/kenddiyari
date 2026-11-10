@@ -26,31 +26,31 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — telefonda şəkil banner + aşağıda kart; böyük ekranda kart şəklin üstündə */}
-      <section className="relative overflow-hidden sm:min-h-[560px]">
-        <img
-          src="/hero.jpg"
-          alt=""
-          aria-hidden="true"
-          className="anim-kenburns block h-60 w-full object-cover object-top sm:absolute sm:inset-0 sm:h-full sm:object-center"
-        />
-        {/* Aşağıya keçid yalnız böyük ekranda (kart şəklin üstündə olanda) */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-20 bg-gradient-to-t from-cream-50 to-transparent sm:block" />
+      {/* Hero — şəkil banner, altında sol tərəfdə yığcam kart (şəklin üstündə deyil) */}
+      <section className="overflow-hidden">
+        <div className="overflow-hidden">
+          <img
+            src="/hero.jpg"
+            alt=""
+            aria-hidden="true"
+            className="anim-kenburns block h-56 w-full object-cover object-top sm:h-[440px] sm:object-center"
+          />
+        </div>
 
-        <div className="container-x relative z-10 sm:flex sm:min-h-[560px] sm:items-end">
-          <div className="-mt-8 max-w-md rounded-3xl bg-cream-50/95 p-6 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:mb-10 sm:mt-0 sm:max-w-sm sm:bg-cream-50/85 sm:p-7">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-sm font-bold text-brand-700">
-              <Leaf size={16} className="text-brand-600" /> 100% təbii
+        <div className="container-x">
+          <div className="relative z-10 -mt-12 max-w-xs rounded-2xl bg-cream-50/95 p-5 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:max-w-sm">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-700">
+              <Leaf size={14} className="text-brand-600" /> 100% təbii
             </span>
-            <h1 className="mt-4 text-3xl font-extrabold leading-tight text-brand-800 sm:text-4xl">
+            <h1 className="mt-3 text-2xl font-extrabold leading-tight text-brand-800 sm:text-3xl">
               Kənddən birbaşa süfrənizə
             </h1>
-            <p className="mt-3 text-brand-900/75">{BRAND.tagline}.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <p className="mt-2 text-sm text-brand-900/75">{BRAND.tagline}.</p>
+            <div className="mt-4 flex flex-wrap gap-2">
               <Link to="/mehsullar" className="btn-primary shadow-md">
                 Məhsullara bax <ArrowRight size={18} />
               </Link>
-              <Link to="/elaqe" className="btn-outline bg-white/70 backdrop-blur">
+              <Link to="/elaqe" className="btn-outline">
                 Əlaqə
               </Link>
             </div>
