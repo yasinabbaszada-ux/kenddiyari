@@ -37,8 +37,8 @@ export default function Home() {
         {/* Aşağıya keçid yalnız böyük ekranda (kart şəklin üstündə olanda) */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-20 bg-gradient-to-t from-cream-50 to-transparent sm:block" />
 
-        <div className="container-x relative z-10 sm:flex sm:min-h-[560px] sm:items-center">
-          <div className="-mt-8 max-w-md rounded-3xl bg-cream-50/95 p-6 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:mt-0 sm:bg-cream-50/85 sm:p-8">
+        <div className="container-x relative z-10 sm:flex sm:min-h-[560px] sm:items-end">
+          <div className="-mt-8 max-w-md rounded-3xl bg-cream-50/95 p-6 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:mb-10 sm:mt-0 sm:max-w-sm sm:bg-cream-50/85 sm:p-7">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-sm font-bold text-brand-700">
               <Leaf size={16} className="text-brand-600" /> 100% təbii
             </span>
