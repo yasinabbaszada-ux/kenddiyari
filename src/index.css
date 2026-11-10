@@ -46,7 +46,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .anim-kenburns {
     animation: kd-kenburns 28s ease-in-out infinite alternate;
-    transform-origin: center top;
+    transform-origin: center;
     will-change: transform;
   }
   .anim-sun {

@@ -26,23 +26,27 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — şəkil banner, altında sol tərəfdə yığcam kart (şəkli örtmür) */}
+      {/* Hero şəkli — tam banner (ilk versiyadakı kimi) */}
       <section className="overflow-hidden">
         <div className="overflow-hidden">
           <img
             src="/hero.jpg"
             alt=""
             aria-hidden="true"
-            className="anim-kenburns block h-56 w-full object-cover object-top sm:h-[460px]"
+            className="anim-kenburns block h-64 w-full object-cover object-center sm:h-[540px]"
           />
         </div>
+      </section>
 
-        <div className="container-x">
-          <div className="mt-6 max-w-xs rounded-2xl bg-cream-50 p-5 shadow-card ring-1 ring-cream-200 sm:max-w-sm">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-700">
+      {/* Şəklin altında: kart (sol) + üstünlüklər (yanında) */}
+      <section className="container-x mt-6">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch">
+          {/* CTA kartı — solda */}
+          <div className="card flex flex-col justify-center p-6 lg:w-80 lg:shrink-0">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-700">
               <Leaf size={14} className="text-brand-600" /> 100% təbii
             </span>
-            <h1 className="mt-3 text-2xl font-extrabold leading-tight text-brand-800 sm:text-3xl">
+            <h1 className="mt-3 text-2xl font-extrabold leading-tight text-brand-800">
               Kənddən birbaşa süfrənizə
             </h1>
             <p className="mt-2 text-sm text-brand-900/75">{BRAND.tagline}.</p>
@@ -55,26 +59,26 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Üstünlüklər */}
-      <section className="container-x grid gap-4 py-8 sm:grid-cols-3">
-        {[
-          { icon: Leaf, title: "Təbii", text: "Konservant və kimyəvi əlavə yoxdur." },
-          { icon: Truck, title: "Təzə çatdırılma", text: "Sifarişiniz təzə-təzə yola düşür." },
-          { icon: ShieldCheck, title: "Keyfiyyət zəmanəti", text: "Kənddən seçilmiş məhsullar." },
-        ].map(({ icon: Icon, title, text }) => (
-          <div key={title} className="card flex items-start gap-3 p-4">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-600">
-              <Icon size={22} />
-            </span>
-            <div>
-              <h3 className="font-bold text-brand-800">{title}</h3>
-              <p className="text-sm text-brand-900/70">{text}</p>
-            </div>
+          {/* Üstünlüklər — kartın yanında */}
+          <div className="grid flex-1 gap-3 sm:grid-cols-3">
+            {[
+              { icon: Leaf, title: "Təbii", text: "Konservant və kimyəvi əlavə yoxdur." },
+              { icon: Truck, title: "Təzə çatdırılma", text: "Sifarişiniz təzə-təzə yola düşür." },
+              { icon: ShieldCheck, title: "Keyfiyyət zəmanəti", text: "Kənddən seçilmiş məhsullar." },
+            ].map(({ icon: Icon, title, text }) => (
+              <div key={title} className="card flex items-start gap-3 p-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-600">
+                  <Icon size={22} />
+                </span>
+                <div>
+                  <h3 className="font-bold text-brand-800">{title}</h3>
+                  <p className="text-sm text-brand-900/70">{text}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </section>
 
       {/* Kateqoriyalar */}
