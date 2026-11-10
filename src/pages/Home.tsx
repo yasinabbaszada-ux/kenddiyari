@@ -26,19 +26,19 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — şəkil banner, altında sol tərəfdə yığcam kart (şəklin üstündə deyil) */}
+      {/* Hero — şəkil banner, altında sol tərəfdə yığcam kart (şəkli örtmür) */}
       <section className="overflow-hidden">
         <div className="overflow-hidden">
           <img
             src="/hero.jpg"
             alt=""
             aria-hidden="true"
-            className="anim-kenburns block h-56 w-full object-cover object-top sm:h-[440px] sm:object-center"
+            className="anim-kenburns block h-56 w-full object-cover object-top sm:h-[460px]"
           />
         </div>
 
         <div className="container-x">
-          <div className="relative z-10 -mt-12 max-w-xs rounded-2xl bg-cream-50/95 p-5 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:max-w-sm">
+          <div className="mt-6 max-w-xs rounded-2xl bg-cream-50 p-5 shadow-card ring-1 ring-cream-200 sm:max-w-sm">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-700">
               <Leaf size={14} className="text-brand-600" /> 100% təbii
             </span>

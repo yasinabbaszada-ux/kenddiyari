@@ -45,8 +45,8 @@
    Hamısı yalnız istifadəçi hərəkətə qarşı deyilsə işləyir. */
 @media (prefers-reduced-motion: no-preference) {
   .anim-kenburns {
-    animation: kd-kenburns 26s ease-in-out infinite alternate;
-    transform-origin: center;
+    animation: kd-kenburns 28s ease-in-out infinite alternate;
+    transform-origin: center top;
     will-change: transform;
   }
   .anim-sun {
@@ -85,10 +85,10 @@
 
 @keyframes kd-kenburns {
   from {
-    transform: scale(1) translate(0, 0);
+    transform: scale(1);
   }
   to {
-    transform: scale(1.1) translate(-2%, -1%);
+    transform: scale(1.04);
   }
 }
 @keyframes kd-spin {
