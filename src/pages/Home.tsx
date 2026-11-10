@@ -6,7 +6,6 @@ import type { Product, Category } from "../types";
 import { BRAND } from "../config";
 import ProductCard from "../components/ProductCard";
 import Spinner from "../components/Spinner";
-import FarmScene from "../components/FarmScene";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -27,28 +26,33 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — animasiyalı kənd mənzərəsi fonu */}
+      {/* Hero — kənd mənzərəsi şəkli (yüngül zum) + şəffaf kart */}
       <section className="relative overflow-hidden">
-        <FarmScene className="absolute inset-0 h-full w-full" />
-        {/* Mətnin oxunması üçün yüngül parıltı + aşağıya keçid */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cream-50/80 via-cream-50/30 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-cream-50 to-transparent" />
+        <img
+          src="/hero.jpg"
+          alt=""
+          aria-hidden="true"
+          className="anim-kenburns absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-cream-50 to-transparent" />
 
-        <div className="container-x relative z-10 flex min-h-[380px] flex-col justify-center py-14 sm:min-h-[460px] sm:py-20">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-sm font-bold text-brand-700 shadow-sm backdrop-blur">
-            <Leaf size={16} className="text-brand-600" /> 100% təbii
-          </span>
-          <h1 className="mt-4 max-w-2xl text-3xl font-extrabold leading-tight text-brand-800 drop-shadow-sm sm:text-5xl">
-            Kənddən birbaşa süfrənizə
-          </h1>
-          <p className="mt-3 max-w-md text-brand-900/75 sm:text-lg">{BRAND.tagline}.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/mehsullar" className="btn-primary shadow-md">
-              Məhsullara bax <ArrowRight size={18} />
-            </Link>
-            <Link to="/elaqe" className="btn-outline bg-white/70 backdrop-blur">
-              Əlaqə
-            </Link>
+        <div className="container-x relative z-10 flex min-h-[440px] items-center py-12 sm:min-h-[560px] sm:py-16">
+          <div className="max-w-md rounded-3xl bg-cream-50/85 p-6 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:p-8">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-sm font-bold text-brand-700">
+              <Leaf size={16} className="text-brand-600" /> 100% təbii
+            </span>
+            <h1 className="mt-4 text-3xl font-extrabold leading-tight text-brand-800 sm:text-4xl">
+              Kənddən birbaşa süfrənizə
+            </h1>
+            <p className="mt-3 text-brand-900/75">{BRAND.tagline}.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/mehsullar" className="btn-primary shadow-md">
+                Məhsullara bax <ArrowRight size={18} />
+              </Link>
+              <Link to="/elaqe" className="btn-outline bg-white/70 backdrop-blur">
+                Əlaqə
+              </Link>
+            </div>
           </div>
         </div>
       </section>

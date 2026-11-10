@@ -44,6 +44,11 @@
 /* ===== Kənd mənzərəsi animasiyaları (ana səhifə fonu) =====
    Hamısı yalnız istifadəçi hərəkətə qarşı deyilsə işləyir. */
 @media (prefers-reduced-motion: no-preference) {
+  .anim-kenburns {
+    animation: kd-kenburns 26s ease-in-out infinite alternate;
+    transform-origin: center;
+    will-change: transform;
+  }
   .anim-sun {
     animation: kd-spin 90s linear infinite;
     transform-box: fill-box;
@@ -78,6 +83,14 @@
   }
 }
 
+@keyframes kd-kenburns {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(1.1) translate(-2%, -1%);
+  }
+}
 @keyframes kd-spin {
   to {
     transform: rotate(360deg);
