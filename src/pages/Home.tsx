@@ -26,18 +26,19 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — kənd mənzərəsi şəkli (yüngül zum) + şəffaf kart */}
-      <section className="relative overflow-hidden">
+      {/* Hero — telefonda şəkil banner + aşağıda kart; böyük ekranda kart şəklin üstündə */}
+      <section className="relative overflow-hidden sm:min-h-[560px]">
         <img
           src="/hero.jpg"
           alt=""
           aria-hidden="true"
-          className="anim-kenburns absolute inset-0 h-full w-full object-cover"
+          className="anim-kenburns block h-60 w-full object-cover object-top sm:absolute sm:inset-0 sm:h-full sm:object-center"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-cream-50 to-transparent" />
+        {/* Aşağıya keçid yalnız böyük ekranda (kart şəklin üstündə olanda) */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-20 bg-gradient-to-t from-cream-50 to-transparent sm:block" />
 
-        <div className="container-x relative z-10 flex min-h-[440px] items-center py-12 sm:min-h-[560px] sm:py-16">
-          <div className="max-w-md rounded-3xl bg-cream-50/85 p-6 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:p-8">
+        <div className="container-x relative z-10 sm:flex sm:min-h-[560px] sm:items-center">
+          <div className="-mt-8 max-w-md rounded-3xl bg-cream-50/95 p-6 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:mt-0 sm:bg-cream-50/85 sm:p-8">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-sm font-bold text-brand-700">
               <Leaf size={16} className="text-brand-600" /> 100% təbii
             </span>
